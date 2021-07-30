@@ -11,7 +11,7 @@ var router = express.Router();
 router.post("/register", function (req, res, next) {
   // check if email and password have data entered
   // if not(no) body or email or password respond with an error
-  if (!req.body || !req.body.email || !req.body.password) {
+  if (!req.body || !req.body.name || !req.body.email || !req.body.password) {
     req.flash('error', 'No Email or Password');
     res.redirect('/users/options')
     return;
@@ -56,6 +56,7 @@ router.post("/login", (req, res) => {
   }
 
   // find user, pass object into ()
+
   db.User.findOne({
     where: {
       email: req.body.email,

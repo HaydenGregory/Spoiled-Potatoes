@@ -1,14 +1,15 @@
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
 const session = require('express-session');
-var logger = require("morgan");
+const logger = require("morgan");
 const flash = require('connect-flash')
+const checkAuth = require("./checkAuth");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const dashboardRouter = require("./routes/dashboard")
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-
-var app = express();
+const app = express();
 
 app.set('view engine', 'ejs')
 app.set('views', 'views')
@@ -32,5 +33,5 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-
+app.use("/dashboard", checkAuth, dashboardRouter)
 module.exports = app;
