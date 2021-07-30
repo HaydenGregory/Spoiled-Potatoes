@@ -7,25 +7,41 @@
 
 <body>
     <%- include('partials/nav') %>
-        <div class="container">
-            <form method="POST" action="/users/register" id="login-form">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input name='name' type="text" class="form-control" id="name">
-                    <div class="form-text"></div>
+                <div class="container">
+                    <form method="POST" action="/users/register" id="register-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input name='name' type="text" class="form-control" id="name">
+                            <div class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input name='email' type="email" class="form-control" id="email"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll share your email with everyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input name='password' type="password" class="form-control" id="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input name='email' type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll share your email with everyone else.</div>
+                <div class="container">
+                    <form method="POST" action="/users/login" id="login-form">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input name='email' type="email" class="form-control" id="email"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll share your email with everyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input name='password' type="password" class="form-control" id="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input name='password' type="password" class="form-control" id="password">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
 </body>
 
 </html>
