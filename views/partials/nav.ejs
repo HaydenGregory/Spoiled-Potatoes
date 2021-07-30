@@ -38,3 +38,25 @@
         </div>
     </div>
 </nav>
+<% if (typeof messages !== 'undefined') { %>
+<% if (messages.error) { %>
+    <% messages.error.forEach(error => { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %> 
+        </div>
+    <% }); %> 
+    <% } %>
+<% if (messages.success) { %>
+    <% messages.success.forEach(success => { %>
+        <div class="alert alert-success" role="alert">
+            <%= success %> 
+        </div>
+    <% }); %> 
+    <% } %>
+<% if (messages.info) { %>
+    <% messages.info.forEach(info => { %>
+        <div class="alert alert-warning" role="alert">
+            <%= info %> 
+        </div>
+    <% }); %> 
+    <% }} %>
