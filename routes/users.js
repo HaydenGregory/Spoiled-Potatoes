@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 // ../ because we're in the routes folder and we need to go up a folder ot go to the models folder
 const db = require("../models");
 const { route } = require(".");
+const { render } = require("../app");
 var router = express.Router();
 
 // registering a user
@@ -27,8 +28,9 @@ router.post("/register", function (req, res, next) {
       })
         // then takes that user just created and passes it to the function
         .then((user) => {
+          req.session.user = user
           // respond with success
-          res.status(201).json(user);
+          res.status(201).redirect('/dashboard');
         });
     });
 });
@@ -55,7 +57,7 @@ router.post("/login", (req, res) => {
         // setting new property (of user) on this session object 
         // read as: if there is a user on the session (read from right to left)
         req.session.user = user;
-        res.json({ message: "successfully logged in" });
+        res.redirect('/dashboard');
       } else {
         // if incorrect, 401 (unauthorized)
         res.status(401).json({ error: "incorrect password" });
@@ -64,13 +66,20 @@ router.post("/login", (req, res) => {
   });
 });
 
+// GET /user/options
+router.get('/options', (req, res, next) => {
+  res.render('user-options', {
+    title: "Spoiled Potatoes"
+  })
+})
+
 // get bc we arent sending info, just making request
 router.get('/logout', (req, res) => {
   // tell express that user logged out
   // remove user information from the session by setting user = null
-  req.session.user = null; 
+  req.session.user = null;
   // send response to show successful logout
-  res.json({ message: 'successfully logged out'})
+  res.json({ message: 'successfully logged out' })
 })
 
 module.exports = router;
