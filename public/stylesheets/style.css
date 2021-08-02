@@ -1,12 +1,59 @@
+@font-face {
+  font-family: 'tostada';
+  src: url(../fonts/TOSTADA.ttf);
+}
+
+@font-face {
+  font-family: 'Bechtlers';
+  src: url(../fonts/Bechtlers.otf);
+}
+
 body {
-  padding: 50px;
+  padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-*{
-  border: 1px solid blue;
+.form-label {
+  font-family: 'Bechtlers';
+  font-size: 20px;
 }
 
-a {
-  color: #00B7FF;
+.container {
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  margin-left: 0px;
+  margin-bottom: 10px; 
+}
+
+.btn {
+  display: flex;
+  font-family: 'Bechtlers';
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.nav-item {
+  font-family: 'Bechtlers';
+}
+
+.btn:hover {
+  background-color: beige;
+}
+
+.navbar {
+  padding-bottom: 40px;
+  height: 60px;
+}
+
+.navbar-brand {
+  font-family: 'tostada';
+  font-size: 30px;
+}
+
+.form-control {
+  width: 600px;
+  margin-right: 0px;
 }
