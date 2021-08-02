@@ -37,5 +37,5 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/dashboard", checkAuth, dashboardRouter)
 app.use("/results", resultsRouter)
-app.use("/results/:movieid", specificResultRouter)
+app.use("/specificresult", checkAuth, specificResultRouter)
 module.exports = app;
