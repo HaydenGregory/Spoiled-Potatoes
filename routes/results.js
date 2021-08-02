@@ -10,7 +10,11 @@ router.post('/', (req, res) => {
   fetch(`https://www.omdbapi.com/?apikey=59354c85&s=${urlEncodedSearchString}`)
     .then(res => res.json())
     .then(results => {
-      res.render('results', { results: results.Search, title: 'Spoiled Potatoes', messages: req.flash() })
+      res.render('results', {
+        results: results.Search,
+        title: "Spoiled Potatoes",
+        messages: req.flash()
+      })
     })
 })
 

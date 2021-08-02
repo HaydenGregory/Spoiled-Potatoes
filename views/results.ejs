@@ -3,10 +3,22 @@
 
 <head>
     <%- include('partials/head') %>
+    <script src="/javascripts/results.js" async defer></script>
 </head>
 
 <body>
     <%- include('partials/nav') %>
-    <%= results[0].Title %> 
+        <% results.forEach(movie=> { %>
+            <div class="card" style="width: 18rem;">
+                <img src="<%= movie.Poster %> " class="card-img-top">
+                <div class="card-body">
+                    <h5 class="<%= movie.Title %> ">
+                        <%= movie.Title %>
+                    </h5>
+                        <button data-movieID="<%= movie.imdbID %>" class="favMovie btn btn-primary">Add To Favorites</button>
+                </div>
+            </div>
+            <% }); %>
 </body>
+
 </html>
