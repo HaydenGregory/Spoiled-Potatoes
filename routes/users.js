@@ -89,11 +89,11 @@ router.post("/login", (req, res) => {
 router.get('/options', (req, res, next) => {
   res.render('user-options', {
     title: "Spoiled Potatoes",
-    // messages: req.flash()
+    messages: req.flash()
   })
 })
 
-// get bc we arent sending info, just making request
+// get bc we aren't sending info, just making request
 router.get('/logout', (req, res) => {
   // tell express that user logged out
   // remove user information from the session by setting user = null

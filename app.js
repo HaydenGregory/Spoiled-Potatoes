@@ -8,6 +8,8 @@ const checkAuth = require("./checkAuth");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard")
+const resultsRouter = require("./routes/results")
+const specificResultRouter = require("./routes/specificresult")
 
 const app = express();
 
@@ -34,4 +36,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/dashboard", checkAuth, dashboardRouter)
+app.use("/results", resultsRouter)
+app.use("/results/specific", specificResultRouter)
 module.exports = app;
