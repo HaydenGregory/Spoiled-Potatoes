@@ -17,7 +17,12 @@
                             <h5 class="<%= movie.Title %> ">
                                 <%= movie.Title %>
                             </h5>
-                            <button data-movieID="<%= movie.imdbID %>" class="favMovie btn btn-dark">Add To Favorites</button>
+                            <% if (!movie.favorite) { %>
+                                <button data-movieID="<%= movie.imdbID %>" class="favMovie btn btn-dark">Add To
+                                    Favorites</button>
+                                <% } else { %>
+                                    <button data-movieID="<%= movie.imdbID %>" class="favMovie btn ">In Favorites</button>
+                                    <% } %>
                         </div>
                     </div>
                     <% }); %>
