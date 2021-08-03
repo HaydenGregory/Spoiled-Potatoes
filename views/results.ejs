@@ -8,7 +8,6 @@
 
 <body>
     <%- include('partials/nav') %>
-
         <div class="container d-flex result-container">
             <div class="row d-flex result-cards">
                 <% results.forEach(movie=> { %>
@@ -18,7 +17,7 @@
                             <h5 class="<%= movie.Title %> ">
                                 <%= movie.Title %>
                             </h5>
-                            <button data-movieID="<%= movie.imdbID %>" class="favMovie btn">Add To Favorites</button>
+                            <button data-movieID="<%= movie.imdbID %>" class="favMovie btn-dark">Add To Favorites</button>
                         </div>
                     </div>
                     <% }); %>
