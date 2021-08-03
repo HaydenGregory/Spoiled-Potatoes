@@ -40,6 +40,15 @@ router.post('/fav/:movieId', (req, res, next) => {
     })
 })
 
-
+router.post('/create', (req, res) => {
+  db.Review.create({
+    UserId: req.session.user.id,
+    movieId: req.body.movieid,
+    rating: req.body.rate, 
+    review: req.body.review
+  }) .then((review) => {
+    res.json(review)
+  })
+})
 
 module.exports = router;
