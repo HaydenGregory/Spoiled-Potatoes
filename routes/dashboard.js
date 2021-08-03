@@ -10,7 +10,13 @@ router.get('/', function (req, res, next) {
     }
   })
     .then((user) => {
-      res.render('dashboard', { title: 'Spoiled Potatoes', user, messages: req.flash() });
+      res.render('dashboard', {
+        title: 'Spoiled Potatoes',
+        user,
+        favorites: db.Favorite,
+        reviews: db.Review,
+        messages: req.flash()
+      });
     })
 });
 
