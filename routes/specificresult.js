@@ -11,21 +11,24 @@ router.get('/results/:movieid', function (req, res, next) {
 });
 
 router.post('/fav/:movieId', (req, res, next) => {
-  db.Favorite.findOne({ where: { movieId: req.params.movieId } })
+  db.Favorite.findOne({
+    where: {
+      UserId: req.session.user.id,
+      movieId: req.params.movieId
+    }
+  })
     .then((movie) => {
       if (movie) {
-        req.flash('error', 'Movie Already in Favorites.')
         res.json('Not added. Already Exists')
         return
       }
       db.Favorite.create({
         UserId: req.session.user.id,
-        movieId: req.params.movieId,
-        rating: 4
+        movieId: req.params.movieId
       })
         .then((favorite) => {
           console.log(favorite)
-          res.send({message: "WHAT UP"})
+          res.send({ message: "WHAT UP" })
         })
     })
 })
