@@ -3,8 +3,6 @@ var express = require("express");
 const bcrypt = require("bcrypt");
 // ../ because we're in the routes folder and we need to go up a folder ot go to the models folder
 const db = require("../models");
-const { route } = require(".");
-const { render } = require("../app");
 var router = express.Router();
 
 // registering a user

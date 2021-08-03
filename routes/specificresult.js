@@ -27,8 +27,7 @@ router.post('/fav/:movieId', (req, res, next) => {
         movieId: req.params.movieId
       })
         .then((favorite) => {
-          console.log(favorite)
-          res.send({ message: "WHAT UP" })
+          res.send({ message: "Added Successfully " })
         })
     })
 })
