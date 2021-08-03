@@ -21,8 +21,9 @@
                                 <button data-movieID="<%= movie.imdbID %>" class="favMovie btn btn-dark">Add To
                                     Favorites</button>
                                 <% } else { %>
-                                    <button data-movieID="<%= movie.imdbID %>" class="favMovie btn ">In Favorites</button>
-                                    <% } %>
+                                <button data-movieID="<%= movie.imdbID %>" class="favMovie btn ">In Favorites</button>
+                                <% } %>
+                                <a href="/specificresult/<%= movie.imdbID %>"> <button data-movieID="<%= movie.imdbID %>" class="moreInfo btn btn-dark">More Info</button></a>
                         </div>
                     </div>
                     <% }); %>
