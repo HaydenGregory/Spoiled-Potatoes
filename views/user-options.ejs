@@ -7,7 +7,29 @@
 
 <body>
     <%- include('partials/nav') %>
-                <div class="container">
+    <div class="container d-flex flex-row login">
+        <span class="form-label1 m-4">Login:</span>
+        <form method="POST" action="/users/login" id="login-form">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input name='email' type="email" class="form-control" id="email"
+                    aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll share your email with everyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name='password' type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Create New Account
+    </button>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+                <div class="container d-flex flex-row signup">
+                    <span class="form-label1 m-4">Signup:</span>
                     <form method="POST" action="/users/register" id="register-form">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
@@ -27,21 +49,8 @@
                         <button type="submit" class="btn">Submit</button>
                     </form>
                 </div>
-                <div class="container">
-                    <form method="POST" action="/users/login" id="login-form">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input name='email' type="email" class="form-control" id="email"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll share your email with everyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input name='password' type="password" class="form-control" id="password">
-                        </div>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
-                </div>
+            </div>
+        </div>
 </body>
 
 </html>

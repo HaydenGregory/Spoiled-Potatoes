@@ -18,6 +18,11 @@ body {
   font-size: 20px;
 }
 
+.form-label1 {
+  font-family: 'Bechtlers';
+  font-size: 30px;
+}
+
 .container {
   border: 3px solid black;
   border-radius: 10px;
@@ -56,4 +61,27 @@ body {
 .form-control {
   width: 600px;
   margin-right: 0px;
+}
+
+.login {
+  justify-content: flex-end;
+  max-width: 800px;
+}
+
+.signup {
+  justify-content: flex-end;
+  max-width: 800px;
+}
+
+.result-cards {
+  justify-content: space-around;
+}
+
+.movie-card {
+  margin-bottom: 30px;
+}
+
+.result-container {
+  justify-content: center;
+  width: 100%;
 }
