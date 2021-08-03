@@ -19,7 +19,7 @@ router.post('/fav/:movieId', (req, res, next) => {
         return
       }
       db.Favorite.create({
-        // UserId: req.session.user.id,
+        UserId: req.session.user.id,
         movieId: req.params.movieId,
         rating: 4
       })
