@@ -18,6 +18,9 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
+      bio: {
+        type: Sequelize.STRING(900),
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -8,6 +8,11 @@
   src: url(../fonts/Bechtlers.otf);
 }
 
+@font-face {
+  font-family: 'agu';
+  src: url(../fonts/AguafinaScript-Regular.ttf);
+}
+
 body {
   padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -24,7 +29,7 @@ body {
 }
 
 .container {
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 10px; 
@@ -64,12 +69,12 @@ body {
 
 .login {
   justify-content: flex-end;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .signup {
   justify-content: flex-end;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .result-cards {
@@ -78,6 +83,8 @@ body {
 
 .movie-card {
   margin-bottom: 30px;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
 .result-container {
@@ -141,4 +148,191 @@ body {
 .review-box {
   flex-grow: 1;
   width: inherit !important;
+}
+
+
+.discover-container {
+  padding: 10px;
+  background-color: lightgray;
+  border-radius: 15px;
+}
+
+.discover-row {
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.discoverposter {
+  width: 150px;
+}
+
+.carousel-row {
+  margin-bottom: 10px;
+}
+
+.container-logo {
+  display: flex;
+  flex-direction: row;
+  max-height: 100%;
+  height: 450px;
+  justify-content: space-evenly;
+}
+
+.text-row {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.discover-question {
+  font-family: 'tostada';
+  font-size: 30px;
+}
+
+.card-body {
+  font-family: 'Bechtlers';
+}
+
+.btn-submit {
+  font-family: 'agu';
+  font-size: x-large;
+  background-color: white;
+  border: white;
+}
+
+.btn-submit:hover {
+  transform: scale(1.1);
+  transition: linear;
+}
+
+.btn-createnew {
+  margin-left: 850px;
+  display: flex;
+  font-family: 'Bechtlers';
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.card-sign {
+  border: white;
+}
+
+.image-container {
+  border: 2px solid black;
+  width: 400px;
+  height: 400px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.favorites-container {
+  border: 2px solid black;
+  width: 400px;
+  height: 1000px;
+  margin: 30px;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.info-container {
+  display: flex;
+}
+
+.bio {
+  margin: 50px;
+}
+
+.favMovie {
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+}
+
+.moreInfo {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+  justify-content: center;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+}
+
+.btn-fav {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+}
+
+.btn-fav:hover {
+  transform: scale(1.1);
+}
+
+.btn-fav {
+  border-color: #f1c40f;
+  color: #fff;
+  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+
+.btn-fav:hover {
+  background-position: 0;
+}
+
+.moreInfo:hover {
+  transform: scale(1.1);
+}
+
+.moreInfo {
+  border-color: #3f89b4;
+  color: rgb(0, 0, 0);
+  background-image: -webkit-linear-gradient(45deg, #3f89b4 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #3f89b4 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+
+.moreInfo:hover {
+  background-position: 0;
+}
+
+.btn-trash {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+  justify-content: center;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.btn-trash:hover {
+  transform: scale(1.1);
+}
+
+.btn-trash {
+  border-color: #d62323;
+  color: rgb(0, 0, 0);
+  background-image: -webkit-linear-gradient(45deg, #d62323 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #d62323 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+
+.btn-trash:hover {
+  background-position: 0;
 }

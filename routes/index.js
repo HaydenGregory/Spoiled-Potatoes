@@ -4,7 +4,10 @@ const db = require("../models");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Spoiled Potatoes', messages: req.flash() });
+  res.render('index', { 
+    title: 'Spoiled Potatoes', 
+    messages: req.flash(),
+    userActive: req.session.user});
 });
 
 module.exports = router;

@@ -15,9 +15,24 @@ router.get('/', function (req, res, next) {
         user,
         favorites: db.Favorite,
         reviews: db.Review,
+        userActive: req.session.user,
         messages: req.flash()
       });
     })
 });
+
+router.patch('/update', (req, res) => {
+  // Find the user id to update
+  db.User.findOne({ where: { id: req.session.user.id } })
+    .then(user => {
+      user.update(
+        {bio: req.body.bio}
+      )
+      .then((updatedBio) => {
+        req.flash('success', 'Successfully updated bio. You are a true Spoiled Potato!')
+        res.redirect('/', 200)
+      })
+    })
+})
 
 module.exports = router;
