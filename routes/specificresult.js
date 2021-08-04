@@ -9,17 +9,15 @@ let movie = null;
 router.get('/:movieid', function (req, res, next) {
   // fetch movie ID from the API
   fetch(`http://www.omdbapi.com/?apikey=59354c85&i=${req.params.movieid}&plot=full`)
-  .then(res => res.json())
-  .then(results => {
-    movie = results;
-    // console.log(movie);
-    // console.log("movie", this.movie);
-    res.render('specificresult', {
-      title: 'Spoiled Potatoes',
-      messages: req.flash(),
-      movie: results
-    });
-  })
+    .then(res => res.json())
+    .then(results => {
+      movie = results;
+      res.render('specificresult', {
+        title: 'Spoiled Potatoes',
+        messages: req.flash(),
+        movie: results
+      });
+    })
 });
 
 router.post('/fav/:movieId', (req, res, next) => {
@@ -44,16 +42,35 @@ router.post('/fav/:movieId', (req, res, next) => {
     })
 })
 
-router.post('/create/', (req, res) => {
-  console.log('movie', movie)
-  db.Review.create({
-    UserId: req.session.user.id,
-    movieId: movie.imdbID,
-    rating: req.body.rate, 
-    review: req.body.review
-  }) .then((review) => {
-    res.json(review)
-  })
+router.post('/create/', async (req, res) => {
+  const foundReview = await db.Review.findOne({ where: { UserId: req.session.user.id, movieId: movie.imdbID } })
+  if (!foundReview) {
+    db.Review.create({
+      UserId: req.session.user.id,
+      movieId: movie.imdbID,
+      rating: req.body.rate,
+      review: req.body.review
+    }).then((review) => {
+      req.flash('success', 'Successfully added your review!')
+      res.redirect('back')
+    })
+  } else {
+    req.flash('error', 'You have already reviewed this movie. Try editing your review. You spoiled potato.')
+    res.redirect('back')
+  }
+})
+
+router.patch('/review/update', (req, res) => {
+  db.Review.findOne({ where: { UserId: req.session.user.id, movieId: req.body.movieId } })
+    .then((reviewToUpdate) => {
+      console.log(reviewToUpdate)
+      reviewToUpdate.update({
+        review: req.body.review
+      }).then((updatedReview) => {
+        req.flash('success', 'Successfully updated your review. You spoiled potato.')
+        res.redirect('back')
+      })
+    })
 })
 
 module.exports = router;
