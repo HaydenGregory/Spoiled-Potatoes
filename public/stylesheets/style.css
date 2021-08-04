@@ -27,7 +27,6 @@ body {
   border: 3px solid black;
   border-radius: 10px;
   padding: 15px;
-  margin-left: 0px;
   margin-bottom: 10px; 
 }
 
@@ -124,4 +123,22 @@ body {
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
+}
+
+.movie-title {
+  font-family: 'Bechtlers';
+  font-size: 30px;
+}
+
+.result-info {
+  font-size: 14px;
+}
+
+.review-movie-id {
+  display: none;
+}
+
+.review-box {
+  flex-grow: 1;
+  width: inherit !important;
 }

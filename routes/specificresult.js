@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const db = require("../models");
-const fetch = require("node-fetch")
+const fetch = require("node-fetch");
+
+let movie = null;
 
 /* GET specific result page. */
 router.get('/:movieid', function (req, res, next) {
@@ -9,7 +11,9 @@ router.get('/:movieid', function (req, res, next) {
   fetch(`http://www.omdbapi.com/?apikey=59354c85&i=${req.params.movieid}&plot=full`)
   .then(res => res.json())
   .then(results => {
-    console.log(results)
+    movie = results;
+    // console.log(movie);
+    // console.log("movie", this.movie);
     res.render('specificresult', {
       title: 'Spoiled Potatoes',
       messages: req.flash(),
@@ -40,10 +44,11 @@ router.post('/fav/:movieId', (req, res, next) => {
     })
 })
 
-router.post('/create', (req, res) => {
+router.post('/create/', (req, res) => {
+  console.log('movie', movie)
   db.Review.create({
     UserId: req.session.user.id,
-    movieId: req.body.movieid,
+    movieId: movie.imdbID,
     rating: req.body.rate, 
     review: req.body.review
   }) .then((review) => {
