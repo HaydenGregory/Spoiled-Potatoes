@@ -8,6 +8,11 @@
   src: url(../fonts/Bechtlers.otf);
 }
 
+@font-face {
+  font-family: 'agu';
+  src: url(../fonts/AguafinaScript-Regular.ttf);
+}
+
 body {
   padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -24,7 +29,7 @@ body {
 }
 
 .container {
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 10px; 
@@ -64,12 +69,12 @@ body {
 
 .login {
   justify-content: flex-end;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .signup {
   justify-content: flex-end;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .result-cards {
@@ -141,4 +146,86 @@ body {
 .review-box {
   flex-grow: 1;
   width: inherit !important;
+}
+
+.card-body {
+  font-family: 'Bechtlers';
+}
+
+.btn-submit {
+  font-family: 'agu';
+  font-size: x-large;
+  background-color: white;
+  border: white;
+}
+
+.btn-submit:hover {
+  transform: scale(1.1);
+  transition: linear;
+}
+
+.btn-createnew {
+  margin-left: 850px;
+  display: flex;
+  font-family: 'Bechtlers';
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.card-sign {
+  border: white;
+}
+
+.image-container {
+  border: 2px solid black;
+  width: 400px;
+  height: 400px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.favorites-container {
+  border: 2px solid black;
+  width: 400px;
+  height: 1000px;
+  margin: 30px;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.info-container {
+  display: flex;
+}
+
+.bio {
+  margin: 50px;
+}
+
+.favMovie {
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+}
+
+.moreInfo {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+  justify-content: center;
+}
+
+.btn-favorites {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.btn-favorites:hover {
+  transform: scale(1.1);
 }
