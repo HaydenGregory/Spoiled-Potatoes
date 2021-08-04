@@ -15,7 +15,7 @@ router.get('/:movieid', function (req, res, next) {
       res.render('specificresult', {
         title: 'Spoiled Potatoes',
         messages: req.flash(),
-        movie: results
+        movie: results,
       });
     })
 });

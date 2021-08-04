@@ -15,6 +15,7 @@ router.get('/', function (req, res, next) {
         user,
         favorites: db.Favorite,
         reviews: db.Review,
+        userActive: req.session.user,
         messages: req.flash()
       });
     })

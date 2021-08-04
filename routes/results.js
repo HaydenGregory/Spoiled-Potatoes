@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
           results: results.Search,
           title: "Spoiled Potatoes",
           messages: req.flash(),
-          userActive: false,
+          userActive: req.session.user,
         });
         return;
       } else {
