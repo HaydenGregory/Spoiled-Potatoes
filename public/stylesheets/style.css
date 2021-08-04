@@ -33,6 +33,7 @@ body {
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 10px; 
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
 .btn {
@@ -155,6 +156,7 @@ body {
   padding: 10px;
   background-color: lightgray;
   border-radius: 15px;
+  border: 2px solid black;
 }
 
 .discover-row {
@@ -220,12 +222,17 @@ body {
   border: white;
 }
 
-.image-container {
+.bio {
+  display: flex;
   border: 2px solid black;
-  width: 400px;
+  width: 100%;
   height: 400px;
   margin: 30px;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  justify-content: center;
+  font-size: larger;
+  padding: 10px;
 }
 
 .favorites-container {
@@ -236,6 +243,11 @@ body {
   margin-top: 50px;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  margin-top: 0px;
+  font-family: 'Bechtlers';
+  font-size: larger;
+  padding: 10px;
 }
 
 .info-container {
@@ -244,6 +256,8 @@ body {
 
 .bio {
   margin: 50px;
+  margin-bottom: 40px;
+  font-family: 'Bechtlers';
 }
 
 .favMovie {
@@ -335,4 +349,26 @@ body {
 
 .btn-trash:hover {
   background-position: 0;
+}
+
+.review-dash {
+  font-family: 'Bechtlers';
+  border: 2px solid black;
+  width: 75%;
+  height: 400px;
+  margin: 30px;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  font-size: larger;
+  padding: 10px;
+}
+
+.dash-container {
+  margin-top: 0px;
+}
+
+.d-block {
+  border: 2px solid black;
 }
