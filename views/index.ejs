@@ -8,55 +8,47 @@
 <body>
     <%- include('partials/nav') %>
         <div class="container shadow-lg">
-            <div class="container-logo">
-                <div class="row w-50">
-                    <div id="carouselMoviePosters" class="carousel carousel-fade slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="d-flex justify-content-end">
-                                    <img src="/images/black_widow_ver21.jpg" class="d-block w-50" alt="..." height="458px">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-end">
-                                    <img src="/images/green_knight_ver8.jpg" class="d-block w-50" alt="..." height="458px">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-end">
-                                    <img src="/images/jungle_cruise_ver17.jpg" class="d-block w-50" alt="..." height="458px">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-end">
-                                    <img src="/images/old_ver2.jpg" class="d-block w-50" alt="..." height="458px">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-end">
-                                    <img src="/images/space_jam_a_new_legacy_ver15.jpg" class="d-block w-50"
-                                        alt="..." height="458px">
-                                </div>
-                            </div>
+            <div class="header">
+                <img src="/images/potato.png" class="potato-img">
+                <div id="carouselExampleSlidesOnly" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                                <img src="/images/black_widow_ver21.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="/images/green_knight_ver8.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/jungle_cruise_ver17.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="/images/old_ver2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="/images/space_jam_a_new_legacy_ver15.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row text-row justify-content-center align-items-center">
-                <div class="col-4">
-                    <h5 class="form-label">Feeling passionate about a film you watched?</h5>
-                    <p>You're in the right place. Search through the database to see other user's reviews for films you
-                        loved... or hated.</p>
-                </div>
-                <div class="col-4">
-                    <h5 class="form-label">What are your friends watching?</h5>
-                    <p>Chances are your friends are discussing their favorite (and least favorite) movies on Spoiled
-                        Potatoes.</p>
+            <div class="footer">
+                <div class="row text-row justify-content-center align-items-center">
+                    <div class="col-4">
+                        <h5 class="form-label">Feeling passionate about a film you watched?</h5>
+                        <p>You're in the right place. Search through the database to see other user's reviews for films
+                            you
+                            loved... or hated.</p>
+                    </div>
+                    <div class="col-4">
+                        <h5 class="form-label">What are your friends watching?</h5>
+                        <p>Chances are your friends are discussing their favorite (and least favorite) movies on Spoiled
+                            Potatoes.</p>
+                    </div>
                 </div>
             </div>
-            <div class="discover-container d-flex">
-                <div class="discover-row d-flex w-100 justify-content-evenly">
-                    <h2 class="discover-question">What will<br> <i>you</i> <br>discover?</h2>
+            <div class="container">
+                <div class="discover-container d-flex">
+                    <div class="discover-row d-flex w-100 justify-content-evenly">
+                        <h2 class="discover-question">What will<br> <i>you</i> <br>discover?</h2>
                         <div class="">
                             <p>Because Quentin loved...</p>
                             <img class="discoverposter" src="/images/django_unchained.jpg"></img>
@@ -69,7 +61,6 @@
                             <img class="discoverposter" src="/images/inglourious_basterds_ver9.jpg"></img>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
