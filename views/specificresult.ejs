@@ -2,14 +2,32 @@
 <html lang="en">
 
 <head>
-    <%- include('partials/head') %>
+  <%- include('partials/head') %>
     <script src="/javascripts/specificresult.js" async defer></script>
 </head>
 
 <body>
-    <%- include('partials/nav') %>
+  <%- include('partials/nav') %>
+    <div class="container specific-movie-container d-flex">
+      <div class="row d-flex specific-movie-info align-items-center">
+        <div class="col result-poster">
+          <img src="<%= movie.Poster %>" class="">
+        </div>
+        <div class="col-7 flex-grow-1 result-info">
+          <h2 class="movie-title">
+            <%= movie.Title %>
+          </h2>
+          <h6>Released: <%= movie.Released %> | Rated: <%= movie.Rated %>
+          </h6>
+          <p>Directed by: <%= movie.Director %> | Starring: <%= movie.Actors %></p>
+          <p>Genre: <%= movie.Genre %></p>
+          <p><%= movie.Plot %></p>
+          <p>IMDB Rating: <%= movie.Ratings[0].Value %> | Rotten Tomatoes: <%= movie.Ratings[1].Value %> </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
     <form method="POST" action="/specificresult/create" class="d-flex">
-    <input display="hidden" name="<%=movie.imdbID%>">
       <div class="rate">
         <input type="radio" id="star5" name="rate" value="5" />
         <label for="star5" title="text">5 stars</label>
@@ -23,11 +41,14 @@
         <label for="star1" title="text">1 star</label>
       </div>
 
-    <div class="input-group">
+      <div class="input-group review-box">
         <span class="input-group-text">Type review here!</span>
         <textarea name="review" class="form-control" aria-label="With textarea"></textarea>
       </div>
-    <button class="btn" type="submit">submit</button>
+      <button class="btn" type="submit">submit</button>
     </form>
+  </div>
+
 </body>
+
 </html>

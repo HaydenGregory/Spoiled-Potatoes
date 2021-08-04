@@ -7,7 +7,8 @@
 
 <body>
     <%- include('partials/nav') %>
-    <div class="container d-flex flex-row login">
+    <div class="d-flex justify-content-start">
+    <div class="container d-flex flex-row justify-content-start login">
         <span class="form-label1 m-4">Login:</span>
         <form method="POST" action="/users/login" id="login-form">
             <div class="mb-3">
@@ -23,12 +24,13 @@
             <button type="submit" class="btn">Submit</button>
         </form>
     </div>
+</div>
     <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Create New Account
     </button>
     <div class="collapse" id="collapseExample">
         <div class="card card-body">
-                <div class="container d-flex flex-row signup">
+                <div class="container d-flex flex-row justify-content-start signup">
                     <span class="form-label1 m-4">Signup:</span>
                     <form method="POST" action="/users/register" id="register-form">
                         <div class="mb-3">
