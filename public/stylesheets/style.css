@@ -83,6 +83,8 @@ body {
 
 .movie-card {
   margin-bottom: 30px;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
 .result-container {
@@ -217,15 +219,51 @@ body {
   background-color: white;
   color: black;
   justify-content: center;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
-.btn-favorites {
+.btn-fav {
   display: flex;
   justify-content: center;
   padding: 5px;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
-.btn-favorites:hover {
+.btn-fav:hover {
   transform: scale(1.1);
+}
+
+.btn-fav {
+  border-color: #f1c40f;
+  color: #fff;
+  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+
+.btn-fav:hover {
+  background-position: 0;
+}
+
+.moreInfo:hover {
+  transform: scale(1.1);
+}
+
+.moreInfo {
+  border-color: #3f89b4;
+  color: rgb(0, 0, 0);
+  background-image: -webkit-linear-gradient(45deg, #3f89b4 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #3f89b4 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+
+.moreInfo:hover {
+  background-position: 0;
 }
