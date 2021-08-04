@@ -10,14 +10,19 @@ router.get('/:movieid', function (req, res, next) {
   // fetch movie ID from the API
   fetch(`http://www.omdbapi.com/?apikey=59354c85&i=${req.params.movieid}&plot=full`)
   .then(res => res.json())
-  .then(results => {
+  .then(async results => {
     movie = results;
-    // console.log(movie);
-    // console.log("movie", this.movie);
+    const reviews = await db.Review.findAll({
+      where: {
+        movieId: movie.imdbID
+      },
+      include: [{model: db.User}]
+    })
     res.render('specificresult', {
       title: 'Spoiled Potatoes',
       messages: req.flash(),
-      movie: results
+      movie: results,
+      reviews: reviews
     });
   })
 });
