@@ -18,10 +18,9 @@
                                 <%= movie.Title %>
                             </h5>
                             <% if (!movie.favorite) { %>
-                                <button data-movieID="<%= movie.imdbID %>" class="favMovie btn btn-dark">Add To
-                                    Favorites</button>
+                                <button data-movieID="<%= movie.imdbID %>" class="favMovie btn-favorites"><img src="/images/star.png" width='20'/></button>
                                 <% } else { %>
-                                <button data-movieID="<%= movie.imdbID %>" class="favMovie btn ">In Favorites</button>
+                                <button data-movieID="<%= movie.imdbID %>" class="favMovie btn-favorites"><img src="/images/star.png" width='20'/></button>
                                 <% } %>
                                 <a href="/specificresult/<%= movie.imdbID %>"> <button data-movieID="<%= movie.imdbID %>" class="moreInfo btn btn-dark">More Info</button></a>
                         </div>
