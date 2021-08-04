@@ -55,8 +55,39 @@
         <div class="card text-dark bg-light mb-3">
           <div class="card-header"><%= review.User.name  %> </div>
           <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text" > <%= review.review %> </p>
+            <% if (review.rating >= 5) { %>
+              <h5 class="card-title d-flex"> 
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+            </h5> <% } %> 
+            <% if (review.rating === 4) { %>
+              <h5 class="card-title d-flex"> 
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+            </h5> <% } %> 
+            <% if (review.rating === 3) { %>
+              <h5 class="card-title d-flex"> 
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+            </h5> <% } %>
+            <% if (review.rating === 2) { %>
+              <h5 class="card-title d-flex"> 
+              <img src="/images/star.png" width="30px" height="30px">
+              <img src="/images/star.png" width="30px" height="30px">
+            </h5> <% } %>
+            <% if (review.rating === 1) { %>
+              <h5 class="card-title d-flex"> 
+              <img src="/images/star.png" width="30px" height="30px">
+            </h5> <% } %>
+            <% if (!userActive) { %>
+              <p class="card-text"> <%= review.review %> </p>
+            <% }  %> 
             </div>
           </div>   
           <% }) %> 
