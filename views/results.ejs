@@ -22,7 +22,7 @@
                                 <% if (!movie.favorite && userActive) { %>
                                     <button data-movieID="<%= movie.imdbID %>" class="favMovie btn-fav col-12"><img src="/images/star.png" width="20"></button>
                                     <% } else if (movie.favorite && userActive) { %>
-                                        <button data-movieID="<%= movie.imdbID %>" class="favMovie btn-fav"><img src="/images/star.png" width="20"></button>
+                                        <button data-movieID="<%= movie.imdbID %>" class="favMovie btn-fav">✖</button>
                                         <% } else { %>
                                             
                                             <% } %>
