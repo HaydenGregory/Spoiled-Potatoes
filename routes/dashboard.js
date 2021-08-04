@@ -24,7 +24,6 @@ router.patch('/update', (req, res) => {
   // Find the user id to update
   db.User.findOne({ where: { id: req.session.user.id } })
     .then(user => {
-      console.log(user)
       user.update(
         {bio: req.body.bio}
       )
