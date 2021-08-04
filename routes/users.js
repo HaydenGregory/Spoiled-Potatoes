@@ -87,7 +87,8 @@ router.post("/login", (req, res) => {
 router.get('/options', (req, res, next) => {
   res.render('user-options', {
     title: "Spoiled Potatoes",
-    messages: req.flash()
+    messages: req.flash(),
+    userActive: req.session.user
   })
 })
 
