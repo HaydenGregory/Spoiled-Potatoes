@@ -52,6 +52,10 @@ router.post('/fav/:movieId', (req, res, next) => {
 
 router.post('/create/', async (req, res) => {
   const foundReview = await db.Review.findOne({ where: { UserId: req.session.user.id, movieId: movie.imdbID } })
+  if (!req.session.user) {
+    req.flash('error', 'You must log in to post review.')
+    res.redirect('back')
+  } 
   if (!foundReview) {
     db.Review.create({
       UserId: req.session.user.id,
