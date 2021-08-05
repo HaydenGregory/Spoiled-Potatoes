@@ -173,13 +173,6 @@ body {
   margin-bottom: 10px;
 }
 
-.container-logo {
-  display: flex;
-  flex-direction: row;
-  max-height: 100%;
-  height: 450px;
-  justify-content: space-evenly;
-}
 
 .text-row {
   margin-top: 20px;
@@ -319,6 +312,23 @@ body {
 
 .moreInfo:hover {
   background-position: 0;
+}
+
+.potato-img {
+  padding-right: 50px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 458px;
+  justify-content: center;
+}
+
+
+.carousel {
+  width: 296px;
+  height: 458px;
 }
 
 .btn-trash {
