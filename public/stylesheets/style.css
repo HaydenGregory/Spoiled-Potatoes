@@ -33,6 +33,7 @@ body {
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 10px; 
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
 }
 
 .btn {
@@ -155,6 +156,7 @@ body {
   padding: 10px;
   background-color: lightgray;
   border-radius: 15px;
+  border: 2px solid black;
 }
 
 .discover-row {
@@ -213,12 +215,17 @@ body {
   border: white;
 }
 
-.image-container {
+.bio {
+  display: flex;
   border: 2px solid black;
-  width: 400px;
+  width: 100%;
   height: 400px;
   margin: 30px;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  justify-content: center;
+  font-size: larger;
+  padding: 10px;
 }
 
 .favorites-container {
@@ -229,6 +236,11 @@ body {
   margin-top: 50px;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  margin-top: 0px;
+  font-family: 'Bechtlers';
+  font-size: larger;
+  padding: 10px;
 }
 
 .info-container {
@@ -237,6 +249,8 @@ body {
 
 .bio {
   margin: 50px;
+  margin-bottom: 40px;
+  font-family: 'Bechtlers';
 }
 
 .favMovie {
@@ -315,4 +329,56 @@ body {
 .carousel {
   width: 296px;
   height: 458px;
+}
+
+.btn-trash {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+  justify-content: center;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.btn-trash:hover {
+  transform: scale(1.1);
+}
+
+.btn-trash {
+  border-color: #d62323;
+  color: rgb(0, 0, 0);
+  background-image: -webkit-linear-gradient(45deg, #d62323 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #d62323 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+
+.btn-trash:hover {
+  background-position: 0;
+}
+
+.review-dash {
+  font-family: 'Bechtlers';
+  border: 2px solid black;
+  width: 75%;
+  height: 400px;
+  margin: 30px;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  font-size: larger;
+  padding: 10px;
+}
+
+.dash-container {
+  margin-top: 0px;
+}
+
+.d-block {
+  border: 2px solid black;
 }

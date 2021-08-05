@@ -9,15 +9,23 @@ let movie = null;
 router.get('/:movieid', function (req, res, next) {
   // fetch movie ID from the API
   fetch(`http://www.omdbapi.com/?apikey=59354c85&i=${req.params.movieid}&plot=full`)
-    .then(res => res.json())
-    .then(results => {
-      movie = results;
-      res.render('specificresult', {
-        title: 'Spoiled Potatoes',
-        messages: req.flash(),
-        movie: results,
-      });
+  .then(res => res.json())
+  .then(async results => {
+    movie = results;
+    const reviews = await db.Review.findAll({
+      where: {
+        movieId: movie.imdbID
+      },
+      include: [{model: db.User}]
     })
+    res.render('specificresult', {
+      title: 'Spoiled Potatoes',
+      messages: req.flash(),
+      movie: results,
+      reviews: reviews,
+      userActive: req.session.user
+    });
+  })
 });
 
 router.post('/fav/:movieId', (req, res, next) => {
@@ -44,6 +52,10 @@ router.post('/fav/:movieId', (req, res, next) => {
 
 router.post('/create/', async (req, res) => {
   const foundReview = await db.Review.findOne({ where: { UserId: req.session.user.id, movieId: movie.imdbID } })
+  if (!req.session.user) {
+    req.flash('error', 'You must log in to post review.')
+    res.redirect('back')
+  } 
   if (!foundReview) {
     db.Review.create({
       UserId: req.session.user.id,
