@@ -58,4 +58,16 @@ router.post("/", (req, res) => {
     });
 });
 
+router.delete("/delete/:movieId", (req, res) => {
+  // use the id to delete the todo that matches
+  db.Favorite.destroy({
+    where: {
+      UserId: req.session.user.id,
+      movieId: req.params.movieId
+    }
+  })
+  req.flash('success', 'Deleted a favorite')
+  res.redirect(204, 'back')
+})
+
 module.exports = router;

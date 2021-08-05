@@ -4,8 +4,20 @@ document.addEventListener('click', (e) => {
             method: "POST"
         })
             .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                })
+            .then(data => {
+                console.log(data)
+            })
+        document.location.reload(true)
+    }
+
+    if (e.target.classList.contains('deleteButton')) {
+        fetch(`/results/delete/${e.target.dataset.movieid}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        document.location.reload(true)
     }
 })
