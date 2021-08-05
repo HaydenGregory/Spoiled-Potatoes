@@ -73,7 +73,7 @@ router.post("/login", (req, res) => {
         // read as: if there is a user on the session (read from right to left)
         req.session.user = user;
         req.flash('success', 'Successfully Logged In')
-        res.redirect('/dashboard');
+        res.redirect('/');
       } else {
         // if incorrect, 401 (unauthorized)
         req.flash('error', 'Incorrect password.')
